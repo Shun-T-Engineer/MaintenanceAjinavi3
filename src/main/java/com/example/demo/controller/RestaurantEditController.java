@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.Shop;
 import com.example.demo.form.RestaurantEditForm;
+import com.example.demo.service.RestaurantEditService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RestaurantEditController {
 	
-//	private final ShopService service;
+	private final RestaurantEditService service;
 	
 	@PostMapping("/show-edit-restaurant")
 	public String showEditForm(@ModelAttribute RestaurantEditForm form) {
@@ -44,10 +45,11 @@ public class RestaurantEditController {
 		}
 		
 		Shop r = new Shop();
+		r.setRestaurantId(form.getRestaurantId());
 		r.setRestaurantName(form.getRestaurantName());
-		r.setCachPhrase(form.getCatchPhrase());
+		r.setCatchPhrase(form.getCatchPhrase());
 		
-		System.out.println(r);
+		service.edit(r);
 		
 		redirectAttributes.addFlashAttribute("msg", "お店を編集");
 		

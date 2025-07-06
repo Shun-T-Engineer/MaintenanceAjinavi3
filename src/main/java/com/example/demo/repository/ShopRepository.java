@@ -9,4 +9,6 @@ public interface ShopRepository {
 	void addShop(Shop shop);
 
 	List<Restaurant> selectByNameWildcard(String restaurantName);
+	
+	void update(Shop shop);
 }

@@ -27,7 +27,7 @@ public class ShopRepositoryImp implements ShopRepository {
 				"VALUES(?, ?)";
 		
 		jdbcTemplate.update(sql, shop.getRestaurantName(),
-													 shop.getCachPhrase() );
+													 shop.getCatchPhrase() );
 	}
 	
 	@Override
@@ -70,6 +70,25 @@ public class ShopRepositoryImp implements ShopRepository {
 		}
 		
 		return result;
+	}
+
+	@Override
+	public void update(Shop shop) {
+		String sql = 
+				" UPDATE" +
+				" m_restaurant" +
+				" SET" +
+				" restaurant_name = ?," +
+				" catch_phrase = ?" +
+				" WHERE" +
+				" restaurant_id = ?";
+		
+		jdbcTemplate.update(sql,
+				shop.getRestaurantName(),
+				shop.getCatchPhrase(),
+				shop.getRestaurantId()				
+				);
+		
 	}
 
 }

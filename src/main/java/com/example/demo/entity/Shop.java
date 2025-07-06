@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class Shop {
+		private Integer restaurantId;
 		private String restaurantName;
 		
-		private String cachPhrase;
+		private String catchPhrase;
 
 }
