@@ -56,7 +56,7 @@ public class ShopRegistController {
 		
 		Shop r = new Shop();
 		r.setRestaurantName(form.getRestaurantName());
-		r.setCachPhrase(form.getCachPhrase());
+		r.setCachPhrase(form.getCatchPhrase());
 		service.shopRegist(r);
 		
 		redirectAttributes.addFlashAttribute("msg", "お店を登録");

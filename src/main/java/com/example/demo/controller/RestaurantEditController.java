@@ -20,6 +20,7 @@ public class RestaurantEditController {
 	
 	@PostMapping("/show-edit-restaurant")
 	public String showEditForm(@ModelAttribute RestaurantEditForm form) {
+		System.out.println(form);
 		return "edit-restaurant";
 	}
 	
@@ -44,7 +45,7 @@ public class RestaurantEditController {
 		
 		Shop r = new Shop();
 		r.setRestaurantName(form.getRestaurantName());
-		r.setCachPhrase(form.getCachPhrase());
+		r.setCachPhrase(form.getCatchPhrase());
 		
 		System.out.println(r);
 		
