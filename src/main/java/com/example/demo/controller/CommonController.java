@@ -10,4 +10,9 @@ public class CommonController {
 	private String shopRegistComplete() {
 		return "shop-regist-complete";
 	}
+	
+	@GetMapping("/restaurant-edit-complete")
+	private String restaurantEditComplete() {
+		return "restaurant-edit-complete";
+	}
 }
