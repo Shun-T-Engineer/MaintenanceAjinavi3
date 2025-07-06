@@ -49,9 +49,9 @@ public class RestaurantEditController {
 		
 		System.out.println(r);
 		
-		redirectAttributes.addFlashAttribute("msg", "お店を登録");
+		redirectAttributes.addFlashAttribute("msg", "お店を編集");
 		
-		return "redirect:/shop-regist-complete";
+		return "redirect:/restaurant-edit-complete";
 	}
 	
 	

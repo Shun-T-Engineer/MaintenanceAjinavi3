@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>店舗登録</title>
+<title>店舗編集</title>
 <link rel="stylesheet" th:href="@{/css/registShop.css}">
 </head>
 <body>
 	
-	<h2>店舗登録</h2>
+	<h2>店舗編集</h2>
 	
-	<form th:action="@{/regist-shop}" method="POST" th:object="${restaurantEditForm}">
+	<form th:action="@{/edit-restaurant}" method="POST" th:object="${restaurantEditForm}">
 		【ID】<br>
 		<p th:text="*{restaurantId}"></p>
 		<input type="hidden" th:field="*{restaurantId}">
